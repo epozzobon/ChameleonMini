@@ -62,6 +62,9 @@ typedef enum  {
 #ifdef CONFIG_EM4233_SUPPORT
 	CONFIG_EM4233,
 #endif
+#ifdef CONFIG_PROXY14443A_SUPPORT
+	CONFIG_PROXY14443A,
+#endif
     /* This HAS to be the last element */
     CONFIG_COUNT
 } ConfigurationEnum;

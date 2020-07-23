@@ -15,6 +15,7 @@
 /* Applications */
 #include "MifareUltralight.h"
 #include "MifareClassic.h"
+#include "Proxy14443A.h"
 #include "Reader14443A.h"
 #include "Vicinity.h"
 #include "Sl2s2002.h"

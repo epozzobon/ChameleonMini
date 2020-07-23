@@ -18,6 +18,7 @@ SETTINGS	+= -DCONFIG_SL2S2002_SUPPORT
 SETTINGS	+= -DCONFIG_TITAGITSTANDARD_SUPPORT
 SETTINGS	+= -DCONFIG_ISO15693_SNIFF_SUPPORT
 SETTINGS	+= -DCONFIG_EM4233_SUPPORT
+SETTINGS	+= -DCONFIG_PROXY14443A_SUPPORT
 
 #Support magic mode on mifare classic configuration
 SETTINGS	+= -DSUPPORT_MF_CLASSIC_MAGIC_MODE
@@ -100,7 +101,7 @@ OPTIMIZATION = s
 SRC         += $(TARGET).c LUFADescriptors.c System.c Configuration.c Random.c Common.c Memory.c MemoryAsm.S Button.c Log.c Settings.c LED.c Map.c AntennaLevel.c
 SRC         += Terminal/Terminal.c Terminal/Commands.c Terminal/XModem.c Terminal/CommandLine.c
 SRC         += Codec/Codec.c Codec/ISO14443-2A.c Codec/Reader14443-2A.c Codec/SniffISO14443-2A.c Codec/Reader14443-ISR.S
-SRC         += Application/MifareUltralight.c Application/MifareClassic.c Application/ISO14443-3A.c Application/Crypto1.c Application/Reader14443A.c Application/Sniff14443A.c Application/CryptoTDEA.S 
+SRC         += Application/MifareUltralight.c Application/MifareClassic.c Application/ISO14443-3A.c Application/Crypto1.c Application/Reader14443A.c Application/Sniff14443A.c Application/CryptoTDEA.S Application/Proxy14443A.c
 SRC         += Codec/ISO15693.c
 SRC         += Application/Vicinity.c Application/Sl2s2002.c Application/TITagitstandard.c Application/ISO15693-A.c Application/EM4233.c
 SRC         += $(LUFA_SRC_USB) $(LUFA_SRC_USBCLASS)

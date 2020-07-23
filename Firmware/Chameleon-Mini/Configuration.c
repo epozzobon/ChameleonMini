@@ -56,6 +56,9 @@ static const MapEntryType PROGMEM ConfigurationMap[] = {
 #ifdef CONFIG_EM4233_SUPPORT
     { .Id = CONFIG_EM4233,	.Text = "EM4233" },
 #endif
+#ifdef CONFIG_PROXY14443A_SUPPORT
+    { .Id = CONFIG_PROXY14443A,	.Text = "PROXY14443A" },
+#endif
 };
 
 /* Include all Codecs and Applications */
@@ -371,6 +374,24 @@ static const PROGMEM ConfigurationType ConfigurationTable[] = {
         .MemorySize = EM4233_STD_MEM_SIZE,
         .ReadOnly = false,
         .TagFamily = TAG_FAMILY_ISO15693
+    },
+#endif
+#ifdef CONFIG_PROXY14443A_SUPPORT
+    [CONFIG_PROXY14443A] = {
+        .CodecInitFunc = ISO14443ACodecInit,
+        .CodecDeInitFunc = ISO14443ACodecDeInit,
+        .CodecTaskFunc = ISO14443ACodecTask,
+        .ApplicationInitFunc = Proxy14443AAppInit,
+        .ApplicationResetFunc = Proxy14443AAppReset,
+        .ApplicationTaskFunc = Proxy14443AAppTask,
+        .ApplicationTickFunc = Proxy14443ATick,
+        .ApplicationProcessFunc = Proxy14443AAppProcess,
+        .ApplicationGetUidFunc = Proxy14443AGetUid,
+        .ApplicationSetUidFunc = Proxy14443ASetUid,
+        .UidSize = MIFARE_CLASSIC_UID_SIZE,
+        .MemorySize = MIFARE_CLASSIC_1K_MEM_SIZE,
+        .ReadOnly = false,
+        .TagFamily = TAG_FAMILY_ISO14443A
     },
 #endif
 };
